@@ -6,7 +6,7 @@
 %global git_date 20240908T180101Z
 %global tag v0.5.4
 
-Name: wallpaper-engine-kde-plugin
+Name:           wallpaper-engine-kde-plugin
 
 Version:        %{tag}^%{git_date}.g%{shortcommit}
 Release:        %autorelease
@@ -29,6 +29,7 @@ BuildRequires: qt6-qtwebchannel-devel
 
 BuildRequires: git
 BuildRequires: cmake
+BuildRequires: extra-cmake-modules
 
 BuildRequires: kf6-rpm-macros
 
