@@ -48,6 +48,7 @@ git checkout %{commit}
 git submodule update --init --recursive
 
 %build
+cd %{_builddir}/%{name}-%{version}
 %cmake_kf6 -DQT_MAJOR_VERSION=6 -DBUILD_QML=ON -DUSE_PLASMAPKG=OFF
 %cmake_build
 
