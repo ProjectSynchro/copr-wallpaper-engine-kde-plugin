@@ -18,6 +18,7 @@ URL: https://github.com/catsout/wallpaper-engine-kde-plugin
 BuildRequires: pkgconfig(vulkan)
 
 BuildRequires: plasma-workspace-devel
+BuildRequires: libplasma-devel
 BuildRequires: gstreamer1-plugin-libav
 BuildRequires: lz4-devel
 BuildRequires: mpv-libs-devel
