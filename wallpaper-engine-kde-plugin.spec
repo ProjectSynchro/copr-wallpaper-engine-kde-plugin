@@ -18,10 +18,12 @@ URL: https://github.com/catsout/wallpaper-engine-kde-plugin
 BuildRequires: pkgconfig(vulkan)
 BuildRequires: pkgconfig(plasma-workspace)
 BuildRequires: pkgconfig(KF6Plasma)
-BuildRequires: pkgconfig(gstreamer-plugins-libav)
+
+BuildRequires: gstreamer1-plugin-libav
 BuildRequires: lz4-devel
 BuildRequires: mpv-libs-devel
 BuildRequires: python3-websockets
+
 BuildRequires: pkgconfig(Qt6Gui-private)
 BuildRequires: pkgconfig(Qt6X11Extras)
 BuildRequires: pkgconfig(Qt6WebChannel)
