@@ -16,18 +16,16 @@ License: GPLv2
 URL: https://github.com/catsout/wallpaper-engine-kde-plugin
 
 BuildRequires: pkgconfig(vulkan)
-BuildRequires: pkgconfig(plasma-workspace)
-BuildRequires: pkgconfig(KF6Plasma)
 
+BuildRequires: plasma-workspace-devel
 BuildRequires: gstreamer1-plugin-libav
 BuildRequires: lz4-devel
 BuildRequires: mpv-libs-devel
 BuildRequires: python3-websockets
 
-BuildRequires: pkgconfig(Qt6Gui-private)
-BuildRequires: pkgconfig(Qt6X11Extras)
-BuildRequires: pkgconfig(Qt6WebChannel)
-BuildRequires: pkgconfig(Qt6WebSockets)
+BuildRequires: qt6-qtbase-private-devel
+BuildRequires: qt6-qtwebsockets-devel
+BuildRequires: qt6-qtwebchannel-devel
 
 BuildRequires: git
 BuildRequires: cmake
