@@ -1,0 +1,1 @@
+# copr-wallpaper-engine-kde-plugin
