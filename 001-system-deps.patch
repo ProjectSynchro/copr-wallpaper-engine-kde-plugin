@@ -1,6 +1,6 @@
 --- a/src/backend_scene/third_party/CMakeLists.txt	2024-09-18 17:15:25.958809842 -0400
-+++ b/src/backend_scene/third_party/CMakeLists.txt	2024-09-18 20:33:45.145409137 -0400
-@@ -1,23 +1,35 @@
++++ b/src/backend_scene/third_party/CMakeLists.txt	2024-09-18 22:45:10.351808367 -0400
+@@ -1,23 +1,36 @@
  set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
  
 +# glad
