@@ -15,7 +15,12 @@ Summary:        KDE wallpaper plugin integrating wallpaper engine
 License: GPLv2
 URL: https://github.com/catsout/wallpaper-engine-kde-plugin
 
+Patch1: 001-system-deps.patch
+
 BuildRequires: pkgconfig(vulkan)
+BuildRequires: pkgconfig(glslang)
+BuildRequires: pkgconfig(spirv)
+BuildRequires: pkgconfig(eigen3)
 
 BuildRequires: plasma-workspace-devel
 BuildRequires: libplasma-devel
@@ -49,12 +54,15 @@ cd %{_builddir}/%{name}-%{version}
 git checkout %{commit}
 git submodule update --init --recursive
 
+%autopatch -p1
+
 %build
 cd %{_builddir}/%{name}-%{version}
 %cmake_kf6 -DQT_MAJOR_VERSION=6 -DBUILD_QML=ON -DUSE_PLASMAPKG=OFF
 %cmake_build
 
 %install
+cd %{_builddir}/%{name}-%{version}
 %cmake_install
 
 %files
