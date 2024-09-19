@@ -79,6 +79,8 @@ cd %{_builddir}/%{name}-%{version}
 %{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/ui/style/qmldir
 %{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/metadata.desktop
 %{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/metadata.json
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/config/*.xml
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/ui/page/*.qml
 
 %files libs
 %{_kf6_qmldir}/com/github/catsout/wallpaperEngineKde/*
