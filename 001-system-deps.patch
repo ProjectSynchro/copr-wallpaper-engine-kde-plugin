@@ -43,5 +43,6 @@
 +    set(ENABLE_GLSLANG_JS OFF)
 +    set(ENABLE_HLSL OFF)
 +    set(ENABLE_OPT OFF)
++    set(BUILD_SHARED_LIBS OFF)
 +    add_subdirectory(glslang EXCLUDE_FROM_ALL)
 +endif()

@@ -18,7 +18,7 @@ URL: https://github.com/catsout/wallpaper-engine-kde-plugin
 Patch1: 001-system-deps.patch
 
 BuildRequires: vulkan-loader-devel
-# TODO Figure out why BaseTypes.h is missing
+# TODO wait until the backend doesn't rely on internal headers.
 #BuildRequires: glslang-devel >= 14.1.0-1
 
 BuildRequires: plasma-workspace-devel
