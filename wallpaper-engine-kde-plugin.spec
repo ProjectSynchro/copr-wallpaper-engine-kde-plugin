@@ -18,8 +18,9 @@ URL: https://github.com/catsout/wallpaper-engine-kde-plugin
 Patch1: 001-system-deps.patch
 
 BuildRequires: pkgconfig(vulkan)
-BuildRequires: pkgconfig(glslang)
-BuildRequires: pkgconfig(spirv)
+# TODO Try this again when glslang 14.1.0 makes it to rawhide.
+#BuildRequires: pkgconfig(glslang) >= 14.1.0
+#BuildRequires: pkgconfig(spirv)
 
 BuildRequires: plasma-workspace-devel
 BuildRequires: libplasma-devel
