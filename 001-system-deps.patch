@@ -1,0 +1,56 @@
+--- a/src/backend_scene/third_party/CMakeLists.txt	2024-09-18 17:15:25.958809842 -0400
++++ b/src/backend_scene/third_party/CMakeLists.txt	2024-09-18 20:12:18.260752474 -0400
+@@ -1,23 +1,43 @@
+ set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
+ 
++# glad
+ add_subdirectory(glad)
+ 
+-add_library (eigen INTERFACE)
+-add_library (Eigen3::Eigen ALIAS eigen)
+-target_include_directories(eigen INTERFACE Eigen)
++# Attempt to find Eigen3
++find_package(Eigen3 QUIET)
++if (Eigen3_FOUND)
++    # Use the Eigen3::Eigen target provided by the system
++    message(STATUS "Using system-installed Eigen3")
++else()
++    message(STATUS "Using local Eigen")
++    add_library(eigen INTERFACE)
++    add_library(Eigen3::Eigen ALIAS eigen)
++    target_include_directories(eigen INTERFACE Eigen)
++endif()
+ 
++# nlohmann
+ add_subdirectory(nlohmann EXCLUDE_FROM_ALL)
+ 
++# SPIRV-Reflect
++message(STATUS "Using local SPIRV-Reflect")
+ set(SPIRV_REFLECT_STATIC_LIB ON)
+ set(SPIRV_REFLECT_EXECUTABLE OFF)
+ set(SPIRV_REFLECT_BUILD_TESTS OFF)
+ set(SPIRV_REFLECT_EXAMPLES OFF)
+ add_subdirectory(SPIRV-Reflect EXCLUDE_FROM_ALL)
+ 
+-set(SKIP_GLSLANG_INSTALL ON)
+-set(ENABLE_GLSLANG_BINARIES OFF)
+-set(ENABLE_SPVREMAPPER OFF)
+-set(ENABLE_GLSLANG_JS OFF)
+-set(ENABLE_HLSL OFF)
+-set(ENABLE_OPT OFF)
+-add_subdirectory(glslang EXCLUDE_FROM_ALL)
++# Attempt to find glslang
++find_package(glslang CONFIG QUIET)
++if (glslang_FOUND)
++    # Use the glslang::glslang target provided by the system
++    message(STATUS "Using system-installed glslang")
++else()
++    message(STATUS "Using local glslang")
++    set(SKIP_GLSLANG_INSTALL ON)
++    set(ENABLE_GLSLANG_BINARIES OFF)
++    set(ENABLE_SPVREMAPPER OFF)
++    set(ENABLE_GLSLANG_JS OFF)
++    set(ENABLE_HLSL OFF)
++    set(ENABLE_OPT OFF)
++    add_subdirectory(glslang EXCLUDE_FROM_ALL)
++endif()
