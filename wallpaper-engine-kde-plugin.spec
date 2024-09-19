@@ -20,7 +20,6 @@ Patch1: 001-system-deps.patch
 BuildRequires: pkgconfig(vulkan)
 BuildRequires: pkgconfig(glslang)
 BuildRequires: pkgconfig(spirv)
-BuildRequires: pkgconfig(eigen3)
 
 BuildRequires: plasma-workspace-devel
 BuildRequires: libplasma-devel
