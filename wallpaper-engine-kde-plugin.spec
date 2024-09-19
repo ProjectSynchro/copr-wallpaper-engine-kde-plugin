@@ -66,6 +66,23 @@ cd %{_builddir}/%{name}-%{version}
 %cmake_install
 
 %files
+%{_kf6_metainfodir}/com.github.catsout.wallpaperEngineKde.appdata.xml
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/images/*
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/*.py
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/ui/*.qml
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/ui/backend/*.qml
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/ui/components/*.qml
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/ui/components/qmldir
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/ui/js/*.mjs
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/ui/page/qmldir
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/ui/qmldir
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/ui/style/*.qml
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/ui/style/qmldir
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/metadata.desktop
+%{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/metadata.json
+
+%files libs
+%{_kf6_qmldir}/com/github/catsout/wallpaperEngineKde/*
 
 %changelog 
 %autochangelog
