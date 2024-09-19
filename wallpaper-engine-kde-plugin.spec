@@ -38,12 +38,14 @@ BuildRequires: extra-cmake-modules
 
 BuildRequires: kf6-rpm-macros
 
+Requires:      wallpaper-engine-kde-plugin-lib = %{version}-%{release}
+
 %description
 %{name} is a wallpaper plugin integrating wallpaper engine into the KDE wallpaper settings.
 
-%package libs
-Summary:	libs for %{name}
-%description libs
+%package lib
+Summary:	plugin lib for %{name}
+%description lib
 %summary
 
 %prep
@@ -82,7 +84,7 @@ cd %{_builddir}/%{name}-%{version}
 %{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/config/*.xml
 %{_kf6_datadir}/plasma/wallpapers/com.github.catsout.wallpaperEngineKde/contents/ui/page/*.qml
 
-%files libs
+%files lib
 %{_kf6_qmldir}/com/github/catsout/wallpaperEngineKde/*
 
 %changelog 
