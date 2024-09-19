@@ -1,6 +1,6 @@
 --- a/src/backend_scene/third_party/CMakeLists.txt	2024-09-18 17:15:25.958809842 -0400
-+++ b/src/backend_scene/third_party/CMakeLists.txt	2024-09-18 20:12:18.260752474 -0400
-@@ -1,23 +1,43 @@
++++ b/src/backend_scene/third_party/CMakeLists.txt	2024-09-18 20:33:45.145409137 -0400
+@@ -1,23 +1,35 @@
  set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
  
 +# glad
@@ -8,24 +8,15 @@
  
 -add_library (eigen INTERFACE)
 -add_library (Eigen3::Eigen ALIAS eigen)
--target_include_directories(eigen INTERFACE Eigen)
-+# Attempt to find Eigen3
-+find_package(Eigen3 QUIET)
-+if (Eigen3_FOUND)
-+    # Use the Eigen3::Eigen target provided by the system
-+    message(STATUS "Using system-installed Eigen3")
-+else()
-+    message(STATUS "Using local Eigen")
-+    add_library(eigen INTERFACE)
-+    add_library(Eigen3::Eigen ALIAS eigen)
-+    target_include_directories(eigen INTERFACE Eigen)
-+endif()
++# Eigen3
++add_library(eigen INTERFACE)
++add_library(Eigen3::Eigen ALIAS eigen)
+ target_include_directories(eigen INTERFACE Eigen)
  
 +# nlohmann
  add_subdirectory(nlohmann EXCLUDE_FROM_ALL)
  
 +# SPIRV-Reflect
-+message(STATUS "Using local SPIRV-Reflect")
  set(SPIRV_REFLECT_STATIC_LIB ON)
  set(SPIRV_REFLECT_EXECUTABLE OFF)
  set(SPIRV_REFLECT_BUILD_TESTS OFF)
