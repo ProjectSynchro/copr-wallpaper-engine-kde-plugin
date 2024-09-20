@@ -1,9 +1,9 @@
 %global _enable_debug_package 0
 %global debug_package %{nil}
 
-%global commit 9e55b26ec8121f0f2558060eb58f0ccb1a64c635
+%global commit 066813c4309faf1a86b5bc54bdaa69b4d7e511ed
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global git_date 20240908T180101Z
+%global git_date 20240920T071329Z
 %global tag v0.5.4
 
 Name:           wallpaper-engine-kde-plugin
