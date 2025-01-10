@@ -38,6 +38,9 @@ BuildRequires: extra-cmake-modules
 
 BuildRequires: kf6-rpm-macros
 
+Requires:      python3-websockets
+Requires:      qt6-qtwebchannel
+Requires:      qt6-qtwebsockets
 Requires:      wallpaper-engine-kde-plugin-lib = %{version}-%{release}
 
 %description
