@@ -40,7 +40,8 @@ BuildRequires: kf6-rpm-macros
 
 Requires:      python3-websockets
 Requires:      qt6-qtwebchannel
-Requires:      qt6-qtwebsockets
+# Code requires the devel package for things to work correctly.. not sure why
+Requires:      qt6-qtwebsockets-devel 
 Requires:      wallpaper-engine-kde-plugin-lib = %{version}-%{release}
 
 %description
