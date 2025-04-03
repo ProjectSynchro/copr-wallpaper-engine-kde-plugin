@@ -17,7 +17,7 @@ jobs:
         run: |
           latest_commit=$(curl -s https://api.github.com/repos/catsout/wallpaper-engine-kde-plugin/commits/main | jq -r '.sha')
           git_date=$(curl -s https://api.github.com/repos/catsout/wallpaper-engine-kde-plugin/commits/main | jq -r '.commit.committer.date' | sed 's/[-:]//g')
-          latest_tag=$(curl -s https://api.github.com/repos/catsout/wallpaper-engine-kde-plugin/tags | jq -r '.[0].name')
+          latest_tag=$(curl -s https://api.github.com/repos/catsout/wallpaper-engine-kde-plugin/tags | jq -r '.[0].name' | sed 's/^v//')
           echo "latest-commit=$latest_commit" >> $GITHUB_OUTPUT
           echo "git-date=$git_date" >> $GITHUB_OUTPUT
           echo "latest-tag=$latest_tag" >> $GITHUB_OUTPUT
