@@ -36,3 +36,25 @@ Commits from the upstream project: https://github.com/catsout/wallpaper-engine-k
 4. **Video Playback:**
    - If videos fail to play, ensure you have the required QtMultimedia GStreamer backend, or alternatively, use MPV for better hardware-accelerated playback.
 
+### Building Locally Using fedpkg
+
+To build this package locally using `fedpkg`, follow these steps:
+
+1. **Clone the Repository**:
+    ```sh
+    fedpkg clone -a copr-wallpaper-engine-kde-plugin.git
+    cd copr-wallpaper-engine-kde-plugin
+    ```
+
+2. **Install Dependencies**:
+    ```sh
+    sudo dnf install fedpkg
+    sudo dnf builddep wallpaper-engine-kde-plugin.spec
+    ```
+
+3. **Build the Package**:
+    ```sh
+    fedpkg local
+    ```
+
+This will create the RPM packages under a folder named by whatever arch you are building for in the current directory.
