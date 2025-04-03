@@ -16,6 +16,7 @@ License: GPLv2
 URL: https://github.com/catsout/wallpaper-engine-kde-plugin
 
 Patch1: 001-system-deps.patch
+Patch2: 002-fix-gcc-15-build.patch
 
 BuildRequires: vulkan-loader-devel
 # TODO wait until the backend doesn't rely on internal headers.
