@@ -8,8 +8,8 @@
 
 Name:           wallpaper-engine-kde-plugin
 
-Version:        %{tag}^%{git_date}.g%{shortcommit}
-Release:        %autorelease
+Version:        %{tag}
+Release:        1.%{git_date}git%{shortcommit}%{?dist}
 Summary:        KDE wallpaper plugin integrating wallpaper engine
 
 License: GPLv2
