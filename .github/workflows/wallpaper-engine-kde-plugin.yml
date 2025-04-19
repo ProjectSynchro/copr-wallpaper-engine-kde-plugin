@@ -31,7 +31,10 @@ jobs:
       - name: Compare Commits
         id: compare-commits
         run: |
-          if [ "${{ steps.get-commit.outputs.latest-commit }}" != "${{ steps.get-current-commit.outputs.current-commit }}" ]; then
+          if [ "${{ steps.get-commit.outputs.latest-commit }}" = "null" ]; then
+            echo "Commit is null, skipping update"
+            echo "new-commit='false'" >> $GITHUB_OUTPUT
+          elif [ "${{ steps.get-commit.outputs.latest-commit }}" != "${{ steps.get-current-commit.outputs.current-commit }}" ]; then
             echo "new-commit='true'" >> $GITHUB_OUTPUT
           else
             echo "new-commit='false'" >> $GITHUB_OUTPUT
