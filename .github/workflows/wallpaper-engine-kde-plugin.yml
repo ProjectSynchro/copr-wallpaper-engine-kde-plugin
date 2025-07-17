@@ -22,7 +22,7 @@ jobs:
 
           while [ $attempt -lt $max_retries ]; do
             echo "Attempt $((attempt+1)) to fetch commit..."
-            response=$(curl -s --fail https://api.github.com/repos/catsout/wallpaper-engine-kde-plugin/commits/master) && success=true && break
+            response=$(curl -s --fail https://api.github.com/repos/catsout/wallpaper-engine-kde-plugin/commits/main) && success=true && break
             attempt=$((attempt+1))
             sleep 5
           done
