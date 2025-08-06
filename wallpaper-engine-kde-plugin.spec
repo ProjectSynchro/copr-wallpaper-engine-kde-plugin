@@ -1,7 +1,7 @@
 %global _enable_debug_package 0
 %global debug_package %{nil}
 
-%global commit 9e60b364e268814a1a778549c579ad45a9b9c7bb
+%global commit replaceme
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global git_date 20250629T083304Z
 %global tag v0.5.4
