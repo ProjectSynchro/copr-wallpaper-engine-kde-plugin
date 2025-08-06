@@ -32,7 +32,15 @@ jobs:
             git_date=$(echo "$response" | jq -r '.commit.committer.date' | sed 's/[-:]//g')
 
             tag_response=$(curl -s --fail https://api.github.com/repos/catsout/wallpaper-engine-kde-plugin/tags || echo '[]')
-            latest_tag=$(echo "$tag_response" | jq -r '.[0].name')
+            # Clean and validate tag: remove 'v' prefix and pick the first valid version (e.g., 1.2.3)
+            latest_tag=""
+            for tag in $(echo "$tag_response" | jq -r '.[].name'); do
+              cleaned_tag="${tag#v}"
+              if echo "$cleaned_tag" | grep -Eq '^[0-9]+(\.[0-9]+)*$'; then
+                latest_tag="$cleaned_tag"
+                break
+              fi
+            done
 
             echo "latest-commit=$latest_commit" >> $GITHUB_OUTPUT
             echo "git-date=$git_date" >> $GITHUB_OUTPUT
